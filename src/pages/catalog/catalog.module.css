@@ -1,0 +1,21 @@
+.catalog {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.categories {
+  max-width: 300px;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+.categories p {
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+}
+.categories img {
+  border-radius: 15%;
+}

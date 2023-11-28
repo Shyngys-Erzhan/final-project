@@ -1,0 +1,33 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  max-width: 1820px;
+  margin: 0 auto;
+  background-color: #1d1d1f;
+  margin-left: 40px;
+}
+.footer p{
+  color: #fff;
+}
+.contacts {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+.footer_contacts_github {
+  color: #fff;
+  font-size: 20px;
+}
+.footer_contacts_instagram {
+  color: #fff;
+  font-size: 20px;
+}
+.footer_contacts_linkedin {
+  color: #fff;
+  font-size: 20px;
+}
+.footer_contacts_telegram {
+  color: #fff;
+  font-size: 20px;
+}

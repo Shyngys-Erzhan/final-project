@@ -1,0 +1,20 @@
+.home_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1820px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.home_container p {
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 20px;
+}
+
+.our {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
