@@ -5,9 +5,10 @@ body {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1820px;
+  max-width: 1320px;
   margin: 0 auto;
   background-color: #1d1d1f;
+  border-radius:50px;
 }
 .wrapper ul {
   display: flex;
