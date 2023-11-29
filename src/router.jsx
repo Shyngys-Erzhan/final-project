@@ -3,7 +3,7 @@ import Home from "./pages/home/home.jsx";
 import Catalog from "./pages/catalog/catalog.jsx";
 import About from "./pages/about/about.jsx";
 import Contacts from "./pages/contacts/contacts.jsx";
-import Cart from "./pages/cart/cart.jsx";
+import Card from "./pages/card/card.jsx";
 import Sign from "./pages/sign/sign.jsx";
 
 
@@ -25,8 +25,8 @@ export const router = createBrowserRouter([
     element: <Contacts />,
   },
   {
-    path: "/cart",
-    element: <Cart />,
+    path: "/card",
+    element: <Card />,
   },
   {
     path: "/sign",

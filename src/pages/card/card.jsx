@@ -1,15 +1,15 @@
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
-import styles from "./cart.module.css";
+import styles from "./card.module.css";
 
-function Cart() {
+function Card() {
   return (
     <>
       <Header />
-      <div className={styles.Cart}>k</div>
+      <div className={styles.card}>k</div>
       <Footer />
     </>
   );
 }
 
-export default Cart;
+export default Card;

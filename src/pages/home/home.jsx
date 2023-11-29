@@ -1,8 +1,10 @@
+import { useEffect, useState } from "react";
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
+// import { getCategories } from "../../api/get-categories";
+// import { getItems } from "../../api/get-items";
 import styles from "./home.module.css";
 import axios from "axios";
-import { useEffect, useState } from "react";
 
 
 async function getUser() {

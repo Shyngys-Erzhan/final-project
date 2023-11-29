@@ -47,8 +47,8 @@ export const Header = () => {
         </ul>
       </div>
       <div className={styles.nav2}>
-        <Link to="/Cart" className={styles.linkImg}>
-          <a className={styles.cart}>
+        <Link to="/Card" className={styles.linkImg}>
+          <a className={styles.card}>
             <TbBrandShopee size="30" color="white" />
           </a>
         </Link>
