@@ -26,16 +26,15 @@ video {
   object-fit: cover;
   display: flex;
   margin: auto;
-  border:solid 3px red;
+  border:double 5px #fff;
 }
 .video_text{
   display: flex;
   justify-content: center;
 }
 .video_text p {
-  color: red;
+  color: #fff;
   font-size: 20px;
   text-align: center;
-  width: 200px;
-
+  width:800px
 }
