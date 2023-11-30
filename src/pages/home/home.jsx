@@ -5,6 +5,7 @@ import { Footer } from "../../components/footer/footer";
 // import { getItems } from "../../api/get-items";
 import styles from "./home.module.css";
 import axios from "axios";
+import videoBg from "../../assets/videos/home_background.mp4"
 
 
 async function getUser() {
@@ -34,10 +35,21 @@ function Home() {
     displayItems();
   }, []);
 
+
   return (
     <>
       <Header />
       <div className={styles.home}>
+
+        <div className={styles.video_content}>
+          <video src={videoBg} autoPlay loop muted />
+          <div className={styles.video_text}>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
+              Nesciunt neque accusamus animi sapiente voluptatibus at molestiae autem ducimus esse.
+              Fuga impedit a illum aut nostrum dolores deserunt quam ratione omnis.</p>
+          </div>
+        </div>
+
         <div className={styles.home_container} style={{ display: "flex", flexWrap: "wrap", gap: "30px" }} >
           {products.map((product) => (
             <div key={product.id}>

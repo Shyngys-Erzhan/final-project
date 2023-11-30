@@ -12,9 +12,30 @@
   color: #fff;
   font-size: 20px;
 }
-
 .our {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.video_content {
+  width: 1300px;
+  margin: 50px auto;
+}
+video {
+  width: 100%;
+  object-fit: cover;
+  display: flex;
+  margin: auto;
+  border:solid 3px red;
+}
+.video_text{
+  display: flex;
+  justify-content: center;
+}
+.video_text p {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+  width: 200px;
+
 }
