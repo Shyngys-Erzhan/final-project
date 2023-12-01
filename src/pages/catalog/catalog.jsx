@@ -3,26 +3,29 @@ import { Footer } from "../../components/footer/footer";
 import styles from "./catalog.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+// import { getCategories } from "../../api/get-categories";
+// import { getItems } from "../../api/get-items";
 
 async function getUser() {
   try {
-    const response = await axios.get(
-      "https://api.escuelajs.co/api/v1/categories/1/products?offset=0&limit=5"
-    );
+    const response = await axios
+      .get(
+        "https://api.escuelajs.co/api/v1/categories?offset=0&limit=5"
+      );
     return response;
   } catch (error) {
     console.error(error);
   }
 }
 
-function Catalog() {
-  const [products, setProducts] = useState([]);
-  console.log(products);
+function Categories() {
+  const [categories, setCategories] = useState([]);
+  console.log(categories);
 
   const displayItems = async () => {
     const response = await getUser();
     if (response) {
-      setProducts(response.data);
+      setCategories(response.data);
     }
   };
 
@@ -30,22 +33,29 @@ function Catalog() {
     displayItems();
   }, []);
 
+
+
   return (
     <>
       <Header />
       <div className={styles.catalog}>
-        {products.map((product) => (
-          <div key={product.id}>
-            <div className={styles.categories}>
-              <img src={product.images[0]} alt="" style={{ width: "250px", }} />
-              <p>{product.title}</p>
+        <div className={styles.catalog_content}>
+          <h1>Categories</h1>
+        </div>
+        <div className={styles.categories_main}>
+          {categories.map((categories) => (
+            <div key={categories.id}>
+              <div className={styles.categories}>
+                <img src={categories.image} alt="" style={{ width: "200px" }} />
+                <p>{categories.name}</p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
       <Footer />
     </>
   );
 }
 
-export default Catalog;
+export default Categories;
