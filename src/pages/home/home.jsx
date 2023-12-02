@@ -10,10 +10,10 @@ import videoBg from "../../assets/videos/home_background.mp4"
 
 async function getUser() {
   try {
-    const response = await axios.get(
-      "https://api.escuelajs.co/api/v1/products?offset=0&limit=30"
-    );
-
+    const response = await axios
+      .get(
+        "https://api.escuelajs.co/api/v1/products/?price_min=900&price_max=1000"
+      );
     return response;
   } catch (error) {
     console.error(error);
@@ -21,13 +21,13 @@ async function getUser() {
 }
 
 function Home() {
-  const [products, setProducts] = useState([]);
-  console.log(products);
+  const [productsPrice, setProductsPrice] = useState([]);
+  console.log(productsPrice);
 
   const displayItems = async () => {
     const response = await getUser();
     if (response) {
-      setProducts(response.data);
+      setProductsPrice(response.data);
     }
   };
 
@@ -58,17 +58,65 @@ function Home() {
           </div>
         </div>
 
-        <div className={styles.home_container} style={{ display: "flex", flexWrap: "wrap", gap: "30px" }} >
-          {products.map((product) => (
-            <div key={product.id}>
-              <img src={product.images[0]} alt="" style={{ width: "200px" }} />
-              <p>{product.title}</p>
+
+
+
+
+        <div className={styles.categories_main}>
+          {productsPrice.map((productsPrice) => (
+            <div key={productsPrice.id}>
+
+              <div className={styles.categories}>
+                <div className={styles.card_top}>
+                  <img src={productsPrice.images} alt="" style={{ width: "200px" }} />
+                  <p>{productsPrice.title}</p>
+                </div>
+              </div>
             </div>
           ))}
         </div>
+
+
+
+
+        <div className={styles.categories_cards}>
+          <div className={styles.card}>
+            <a href="/catalog1">
+              <img src="https://i.imgur.com/QkIa5tT.jpeg" alt="card1" width="150px" />
+              <p>Clothes</p>
+            </a>
+          </div>
+          <div className={styles.card}>
+            <a href="/catalog1">
+              <img src="https://justfields.com/storage/projects/7M5rV059/cd_1_flat.jpg" alt="card2" width="150px" />
+              <p>Projects</p>
+            </a>
+          </div>
+          <div className={styles.card}>
+            <a href="/catalog1">
+              <img src="https://i.imgur.com/Qphac99.jpeg" alt="card3" width="150px" />
+              <p>Furniture</p>
+            </a>
+          </div>
+          <div className={styles.card}>
+            <a href="/catalog1">
+              <img src="https://i.imgur.com/qNOjJje.jpeg" alt="card4" width="150px" />
+              <p>Shoes</p>
+            </a>
+          </div>
+          <div className={styles.card_5}>
+            <a href="/catalog1">
+              <img src="https://i.imgur.com/BG8J0Fj.jpg" alt="card5" width="150px" />
+              <p>Miscellaneous</p>
+            </a>
+          </div>
+        </div>
       </div>
+
+
       <Footer />
     </>
   );
 }
+
 export default Home;

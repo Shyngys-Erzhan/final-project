@@ -27,9 +27,9 @@ video {
   object-fit: cover;
   display: flex;
   margin: auto;
-  border:double 5px #fff;
+  border: double 5px #fff;
 }
-.video_text{
+.video_text {
   display: flex;
   justify-content: center;
 }
@@ -37,5 +37,33 @@ video {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  width:1200px
+  width: 1200px;
 }
+.categories {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1820px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+.categories p {
+  color: red;
+}
+.categories_main {
+  display: flex;
+  max-width: 1420px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.categories_cards {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1420px;
+  margin: 0 auto;
+  text-align: center;
+}
+.categories_cards p {
+  color: #fff;
+  font-size: 20px;
+}
+.categories_cards a{text-decoration: none;}
