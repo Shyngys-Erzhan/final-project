@@ -23,6 +23,7 @@
 }
 video {
   width: 100%;
+  max-width: 1820px;
   object-fit: cover;
   display: flex;
   margin: auto;
@@ -36,5 +37,5 @@ video {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  width:800px
+  width:1200px
 }

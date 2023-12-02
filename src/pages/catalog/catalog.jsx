@@ -33,8 +33,6 @@ function Categories() {
     displayItems();
   }, []);
 
-
-
   return (
     <>
       <Header />
@@ -47,7 +45,9 @@ function Categories() {
             <div key={categories.id}>
               <div className={styles.categories}>
                 <img src={categories.image} alt="" style={{ width: "200px" }} />
-                <p>{categories.name}</p>
+                <div className={styles.categories_bottom}>
+                  <p>{categories.name}</p>
+                </div>
               </div>
             </div>
           ))}

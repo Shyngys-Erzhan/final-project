@@ -5,6 +5,7 @@
   max-width: 1820px;
   margin: 0 auto;
   background-color: #1d1d1f;
+  border-radius: 20px;
 }
 .footer p {
   color: #fff;

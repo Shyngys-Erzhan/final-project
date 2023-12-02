@@ -13,14 +13,22 @@
 .catalog_content h1 {
   color: red;
   font-size: 30px;
-  border:solid 3px #fff;
-  border-radius: 40px;
+  border: solid 3px #fff;
+  border-radius: 30px;
+  padding-top: 5px;
+  padding-left: 15px;
+  padding-bottom: 5px;
+  padding-right: 15px;
 }
 .categories_main {
   display: flex;
   justify-content: space-between;
 }
 .categories_main p {
+  color: aqua;
+  font-size: 30px;
+}
+.categories_bottom p {
   color: aqua;
   font-size: 30px;
 }
