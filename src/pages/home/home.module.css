@@ -39,15 +39,24 @@ video {
   text-align: center;
   width: 1200px;
 }
+h1 {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
+}
 .categories {
-  display: flex;
-  justify-content: space-between;
   max-width: 1820px;
+  display: flex;
   margin: 0 auto;
   margin-top: 50px;
 }
 .categories p {
   color: red;
+}
+h2 {
+  color: #fff;
+  font-size: 20px;
+  text-align: center;
 }
 .categories_main {
   display: flex;
@@ -66,4 +75,9 @@ video {
   color: #fff;
   font-size: 20px;
 }
-.categories_cards a{text-decoration: none;}
+.categories_cards a {
+  text-decoration: none;
+}
+.card:hover {
+  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+}

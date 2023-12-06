@@ -6,13 +6,14 @@ import { Footer } from "../../components/footer/footer";
 import styles from "./home.module.css";
 import axios from "axios";
 import videoBg from "../../assets/videos/home_background.mp4"
+import { Link } from "react-router-dom";
 
 
 async function getUser() {
   try {
     const response = await axios
       .get(
-        "https://api.escuelajs.co/api/v1/products/?price_min=900&price_max=1000"
+        "https://api.escuelajs.co/api/v1/products/?price_min=500&price_max=1200"
       );
     return response;
   } catch (error) {
@@ -60,6 +61,7 @@ function Home() {
 
 
 
+        <h1>Top products</h1>
 
 
         <div className={styles.categories_main}>
@@ -76,40 +78,42 @@ function Home() {
           ))}
         </div>
 
-
+        <h2>Categoires</h2>
 
 
         <div className={styles.categories_cards}>
-          <div className={styles.card}>
-            <a href="/catalog1">
+
+          <Link to="/catalog1" className={styles.w}>
+            <a >
               <img src="https://i.imgur.com/QkIa5tT.jpeg" alt="card1" width="150px" />
               <p>Clothes</p>
             </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/catalog1">
+          </Link>
+
+          <Link to="/catalog2" className={styles.w}>
+            <a >
               <img src="https://justfields.com/storage/projects/7M5rV059/cd_1_flat.jpg" alt="card2" width="150px" />
               <p>Projects</p>
             </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/catalog1">
+          </Link>
+          <Link to="/catalog3" className={styles.w}>
+            <a >
               <img src="https://i.imgur.com/Qphac99.jpeg" alt="card3" width="150px" />
               <p>Furniture</p>
             </a>
-          </div>
-          <div className={styles.card}>
-            <a href="/catalog1">
+          </Link>
+          <Link to="/catalog4" className={styles.w}>
+            <a>
               <img src="https://i.imgur.com/qNOjJje.jpeg" alt="card4" width="150px" />
               <p>Shoes</p>
             </a>
-          </div>
-          <div className={styles.card_5}>
-            <a href="/catalog1">
+          </Link>
+          <Link to="/catalog5" className={styles.w}>
+            <a>
               <img src="https://i.imgur.com/BG8J0Fj.jpg" alt="card5" width="150px" />
               <p>Miscellaneous</p>
             </a>
-          </div>
+          </Link>
         </div>
       </div>
 
