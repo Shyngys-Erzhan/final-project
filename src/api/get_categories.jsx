@@ -1,7 +1,6 @@
-import { Header } from "../../components/header/header";
-import { Footer } from "../../components/footer/footer";
-import styles from "./project.module.css";
 import { useState, } from "react";
+import styles from "./get_categories.module.css";
+
 
 
 
@@ -19,7 +18,6 @@ function Project() {
 
   return (
     <>
-      <Header />
       <div className={styles.categories_main}>
         {categories.map((categories) => (
           <div key={categories.id}>
@@ -33,10 +31,8 @@ function Project() {
           </div>
         ))}
       </div>
-      <Footer />
     </>
   );
 }
 
 export default Project;
-

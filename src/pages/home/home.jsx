@@ -6,7 +6,9 @@ import { Footer } from "../../components/footer/footer";
 import styles from "./home.module.css";
 import axios from "axios";
 import videoBg from "../../assets/videos/home_background.mp4"
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+
+
 
 
 async function getUser() {
@@ -81,40 +83,6 @@ function Home() {
         <h2>Categoires</h2>
 
 
-        <div className={styles.categories_cards}>
-
-          <Link to="/catalog1" className={styles.w}>
-            <a >
-              <img src="https://i.imgur.com/QkIa5tT.jpeg" alt="card1" width="150px" />
-              <p>Clothes</p>
-            </a>
-          </Link>
-
-          <Link to="/catalog2" className={styles.w}>
-            <a >
-              <img src="https://justfields.com/storage/projects/7M5rV059/cd_1_flat.jpg" alt="card2" width="150px" />
-              <p>Projects</p>
-            </a>
-          </Link>
-          <Link to="/catalog3" className={styles.w}>
-            <a >
-              <img src="https://i.imgur.com/Qphac99.jpeg" alt="card3" width="150px" />
-              <p>Furniture</p>
-            </a>
-          </Link>
-          <Link to="/catalog4" className={styles.w}>
-            <a>
-              <img src="https://i.imgur.com/qNOjJje.jpeg" alt="card4" width="150px" />
-              <p>Shoes</p>
-            </a>
-          </Link>
-          <Link to="/catalog5" className={styles.w}>
-            <a>
-              <img src="https://i.imgur.com/BG8J0Fj.jpg" alt="card5" width="150px" />
-              <p>Miscellaneous</p>
-            </a>
-          </Link>
-        </div>
       </div>
 
 

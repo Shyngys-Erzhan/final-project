@@ -42,23 +42,23 @@ export const router = createBrowserRouter([
 
 
   {
-    path: "/catalog1",
+    path: "/catalog/1",
     element: <Clothes />,
   },
   {
-    path: "/catalog2",
+    path: "/catalog/2",
     element: <Project />
   },
   {
-    path: "/catalog3",
+    path: "/catalog/3",
     element: <Furniture />
   },
   {
-    path: "/catalog4",
+    path: "/catalog/4",
     element: <Shoes />
   },
   {
-    path: "/catalog5",
+    path: "/catalog/5",
     element: <Miscellaneous />
   },
 ]);

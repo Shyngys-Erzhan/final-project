@@ -3,6 +3,7 @@ import { Footer } from "../../components/footer/footer";
 import styles from "./catalog.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 // import { getCategories } from "../../api/get-categories";
 // import { getItems } from "../../api/get-items";
 
@@ -17,6 +18,8 @@ async function getUser() {
     console.error(error);
   }
 }
+
+
 
 function Categories() {
   const [categories, setCategories] = useState([]);
@@ -33,6 +36,8 @@ function Categories() {
     displayItems();
   }, []);
 
+
+
   return (
     <>
       <Header />
@@ -42,14 +47,16 @@ function Categories() {
         </div>
         <div className={styles.categories_main}>
           {categories.map((categories) => (
-            <div key={categories.id}>
-              <div className={styles.categories}>
-                <img src={categories.image} alt="" style={{ width: "200px" }} />
-                <div className={styles.categories_bottom}>
-                  <p>{categories.name}</p>
+            <Link key={categories.id} to={`/catalog/${categories.id}`} className={styles.link}>
+              <div key={categories.id}>
+                <div className={styles.categories}>
+                  <img src={categories.image} alt="" style={{ width: "200px" }} />
+                  <div className={styles.categories_bottom}>
+                    <p>{categories.name}</p>
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>
