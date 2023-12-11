@@ -1,0 +1,11 @@
+.categories_main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.categories_bottom p{
+  color: aqua;
+  font-size: 10px;
+}

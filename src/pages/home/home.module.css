@@ -39,45 +39,38 @@ video {
   text-align: center;
   width: 1200px;
 }
-h1 {
-  color: #fff;
-  font-size: 20px;
-  text-align: center;
-}
-.categories {
-  max-width: 1820px;
+.home_content {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1220px;
   margin: 0 auto;
-  margin-top: 50px;
+  flex-wrap: wrap;
 }
-.categories p {
-  color: red;
-}
-h2 {
+.home_content p {
   color: #fff;
   font-size: 20px;
-  text-align: center;
 }
 .categories_main {
   display: flex;
-  max-width: 1420px;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1220px;
   margin: 0 auto;
+  flex-wrap: wrap;
 }
-.categories_cards {
+h1 {
   display: flex;
-  justify-content: space-between;
-  max-width: 1420px;
-  margin: 0 auto;
-  text-align: center;
+  justify-content: center;
 }
-.categories_cards p {
-  color: #fff;
-  font-size: 20px;
-}
-.categories_cards a {
+.link {
   text-decoration: none;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+  font-size: 15px;
 }
-.card:hover {
-  box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.5);
+.link:hover {
+  box-shadow: 0 0 20px 20px rgb(68, 64, 64);
+  transition: 0.5s;
 }

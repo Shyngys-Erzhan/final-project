@@ -4,8 +4,7 @@ import styles from "./catalog.module.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { getCategories } from "../../api/get-categories";
-// import { getItems } from "../../api/get-items";
+
 
 async function getUser() {
   try {
@@ -22,8 +21,7 @@ async function getUser() {
 
 
 function Categories() {
-  const [categories, setCategories] = useState([]);
-  console.log(categories);
+  const [categories, setCategories] = useState([])
 
   const displayItems = async () => {
     const response = await getUser();

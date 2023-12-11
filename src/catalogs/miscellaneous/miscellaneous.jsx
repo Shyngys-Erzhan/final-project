@@ -6,7 +6,7 @@ function Miscellaneous() {
   return (
     <>
       <Header />
-      <div className={styles.www}>
+      <div className={styles.w}>
 
       </div>
       <Footer />

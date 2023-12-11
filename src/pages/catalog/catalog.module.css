@@ -34,4 +34,9 @@
 }
 .link {
   text-decoration: none;
+  margin-bottom: 30px;
+}
+.link:hover {
+  box-shadow: 0 0 20px 20px rgb(68, 64, 64);
+  transition: 0.5s;
 }

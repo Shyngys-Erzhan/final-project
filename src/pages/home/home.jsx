@@ -6,16 +6,14 @@ import { Footer } from "../../components/footer/footer";
 import styles from "./home.module.css";
 import axios from "axios";
 import videoBg from "../../assets/videos/home_background.mp4"
-// import { Link } from "react-router-dom";
-
-
+import { Link } from "react-router-dom";
 
 
 async function getUser() {
   try {
     const response = await axios
       .get(
-        "https://api.escuelajs.co/api/v1/products/?price_min=500&price_max=1200"
+        "https://api.escuelajs.co/api/v1/categories?offset=0&limit=5"
       );
     return response;
   } catch (error) {
@@ -23,14 +21,15 @@ async function getUser() {
   }
 }
 
+
+
 function Home() {
-  const [productsPrice, setProductsPrice] = useState([]);
-  console.log(productsPrice);
+  const [categories, setCategories] = useState([])
 
   const displayItems = async () => {
     const response = await getUser();
     if (response) {
-      setProductsPrice(response.data);
+      setCategories(response.data);
     }
   };
 
@@ -62,30 +61,26 @@ function Home() {
         </div>
 
 
-
-        <h1>Top products</h1>
-
-
-        <div className={styles.categories_main}>
-          {productsPrice.map((productsPrice) => (
-            <div key={productsPrice.id}>
-
-              <div className={styles.categories}>
-                <div className={styles.card_top}>
-                  <img src={productsPrice.images} alt="" style={{ width: "200px" }} />
-                  <p>{productsPrice.title}</p>
+        <div className={styles.catalog}>
+          <div className={styles.catalog_content}>
+            <h1>Categories</h1>
+          </div>
+          <div className={styles.categories_main}>
+            {categories.map((categories) => (
+              <Link key={categories.id} to={`/catalog/${categories.id}`} className={styles.link}>
+                <div key={categories.id}>
+                  <div className={styles.categories}>
+                    <img src={categories.image} alt="" style={{ width: "200px" }} />
+                    <div className={styles.categories_bottom}>
+                      <p>{categories.name}</p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          ))}
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <h2>Categoires</h2>
-
-
       </div>
-
-
       <Footer />
     </>
   );
