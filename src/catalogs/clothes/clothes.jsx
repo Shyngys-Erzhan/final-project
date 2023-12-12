@@ -41,8 +41,8 @@ function Clothes() {
       {categories.map((categories) => (
         <div key={categories.id}>
           <p>{categories.name}</p>
-          <img src={categories.image} style={{ width: "200px" }} />
-          <p>{categories.price}</p>
+          <img src={categories.images} style={{ width: "200px" }} />
+          <p style={{color:"red"}}>{categories.price}</p>
           <p>{categories.title}</p>
         </div>
       ))}

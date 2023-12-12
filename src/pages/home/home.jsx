@@ -1,42 +1,11 @@
-import { useEffect, useState } from "react";
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
-// import { getCategories } from "../../api/get-categories";
-// import { getItems } from "../../api/get-items";
 import styles from "./home.module.css";
-import axios from "axios";
 import videoBg from "../../assets/videos/home_background.mp4"
-import { Link } from "react-router-dom";
-
-
-async function getUser() {
-  try {
-    const response = await axios
-      .get(
-        "https://api.escuelajs.co/api/v1/categories?offset=0&limit=5"
-      );
-    return response;
-  } catch (error) {
-    console.error(error);
-  }
-}
-
-
+import Items from "../../api/get-items";
+import Categories from "../../api/get_categories";
 
 function Home() {
-  const [categories, setCategories] = useState([])
-
-  const displayItems = async () => {
-    const response = await getUser();
-    if (response) {
-      setCategories(response.data);
-    }
-  };
-
-  useEffect(() => {
-    displayItems();
-  }, []);
-
 
   return (
     <>
@@ -60,26 +29,10 @@ function Home() {
           </div>
         </div>
 
-
-        <div className={styles.catalog}>
-          <div className={styles.catalog_content}>
-            <h1>Categories</h1>
-          </div>
-          <div className={styles.categories_main}>
-            {categories.map((categories) => (
-              <Link key={categories.id} to={`/catalog/${categories.id}`} className={styles.link}>
-                <div key={categories.id}>
-                  <div className={styles.categories}>
-                    <img src={categories.image} alt="" style={{ width: "200px" }} />
-                    <div className={styles.categories_bottom}>
-                      <p>{categories.name}</p>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
+        <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
+          <Categories />
         </div>
+        <Items />
       </div>
       <Footer />
     </>

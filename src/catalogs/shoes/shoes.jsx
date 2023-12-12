@@ -21,6 +21,7 @@ function Shoes() {
     getCategories()
   }, [])
 
+  console.log(categories)
 
   return (
     <>
