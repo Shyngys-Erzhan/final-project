@@ -1,13 +1,10 @@
-body {
-  background-color: #000000;
-}
 .wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1320px;
+  max-width: 1440px;
   margin: 0 auto;
-  background-color: #1d1d1f;
+  background-color: #031225;
   border-radius: 50px;
 }
 .wrapper ul {
@@ -18,10 +15,10 @@ body {
 .link {
   text-decoration: none;
   color: #fff;
-  font-size: 30px;
+  font-size: 40px;
 }
 .link:hover {
-  text-decoration: underline;
+  color: cyan;
 }
 .reactImg {
   padding: 0;
@@ -78,7 +75,6 @@ img.rot {
   border-right: solid 2px black;
   padding-right: 20px;
 }
-
 .sign button {
   color: #fff;
   border: none;

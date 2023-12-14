@@ -49,14 +49,10 @@ export const Header = () => {
       </div>
       <div className={styles.nav2}>
         <Link to="/Card" className={styles.linkImg}>
-          <a className={styles.card}>
-            <TbBrandShopee size="30" color="white" />
-          </a>
+          <TbBrandShopee size="30" color="white" />
         </Link>
         <Link to="/Sign" className={styles.sign}>
-          <a className={styles.sign}>
-            <MdOutlineAccountCircle size="25" color="white" />
-          </a>
+          <MdOutlineAccountCircle size="25" color="white" />
         </Link>
       </div>
     </div>

@@ -2,13 +2,15 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  max-width: 1820px;
+  max-width: 1600px;
+  height: 70px;
   margin: 0 auto;
-  background-color: #1d1d1f;
-  border-radius: 20px;
+  background-color: #031225;
+  border-radius: 50px;
 }
 .footer p {
   color: #fff;
+  font-size: 20px;
 }
 .contacts {
   display: flex;

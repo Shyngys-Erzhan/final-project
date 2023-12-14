@@ -1,1 +1,4 @@
 @import url("./assets/styles/normalize.css");
+body {
+  background-color: #21414E;
+}

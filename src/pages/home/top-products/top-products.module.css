@@ -1,14 +1,43 @@
 .content {
   display: flex;
   justify-content: space-between;
-  max-width: 1240px;
+  max-width: 1600px;
   margin: 0 auto;
   align-items: center;
 }
 p {
   color: cyan;
   font-size: 15px;
+  text-align: center;
 }
 img {
-  width: 100px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+}
+.card {
+  border: 5px solid #fff;
+  background-color: #031225;
+}
+.title {
+  text-align: center;
+}
+.img_left {
+  width: 50px;
+  height: 50px;
+  background-color: #21414e;
+}
+.img_right {
+  width: 50px;
+  height: 50px;
+  background-color: #21414e;
+}
+.content button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: #fff;
+  cursor: pointer;
 }

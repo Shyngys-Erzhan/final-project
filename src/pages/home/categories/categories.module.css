@@ -1,14 +1,15 @@
 .container {
+  max-width: 1600px;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 auto;
-  max-width: 1000px;
 }
 .link {
   text-decoration: none;
+  border: solid 5px #fff;
 }
 .container img {
-  width: 100px;
+  width: 150px;
 }
 .container p {
   color: cyan;

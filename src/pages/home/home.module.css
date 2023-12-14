@@ -2,12 +2,12 @@
   margin-bottom: 50px;
 }
 .video_content {
-  width: 1300px;
+  width: 100%;
   margin: 50px auto;
 }
 video {
-  width: 100%;
-  max-width: 1820px;
+  max-width: 1440px;
+  width: 1000px;
   object-fit: cover;
   display: flex;
   margin: auto;
@@ -21,7 +21,8 @@ video {
   color: #fff;
   font-size: 20px;
   text-align: center;
-  width: 1200px;
+  width: 1440px;
+  padding-top: 30px;
 }
 .content {
   margin: 0 auto;
@@ -30,12 +31,12 @@ video {
 .content h1 {
   color: cyan;
   text-align: center;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   font-size: 50px;
 }
 .container h1 {
   color: cyan;
   text-align: center;
-  margin-bottom: 100px;
   margin-top: 50px;
+  margin-bottom: 50px;
 }
