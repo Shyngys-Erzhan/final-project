@@ -7,7 +7,6 @@ function About() {
     <>
       <Header />
       <div className={styles.about}>
-        <h1 className={styles.firstName}>Shyngys</h1>
       </div>
       <Footer />
     </>

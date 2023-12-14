@@ -6,7 +6,7 @@ function Sign() {
   return (
     <>
       <Header />
-      <div className={styles.w}>A</div>
+      <div className={styles.w}></div>
       <Footer />
     </>
   );

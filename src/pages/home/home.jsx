@@ -1,16 +1,16 @@
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
+import Categories from "./categories/categories";
+import TopProducts from "./top-products/top-products";
 import styles from "./home.module.css";
 import videoBg from "../../assets/videos/home_background.mp4"
-import Items from "../../api/get-items";
-import Categories from "../../api/get_categories";
 
 function Home() {
 
   return (
     <>
       <Header />
-      <div className={styles.home}>
+      <div className={styles.container} >
 
         <div className={styles.video_content}>
           <video src={videoBg} autoPlay loop muted />
@@ -25,14 +25,17 @@ function Home() {
               Tenetur, provident ipsa. Numquam illo nihil dolore culpa laborum harum exercitationem odit reprehenderit delectus,
               ipsam ex laboriosam magnam minus nesciunt a modi fuga cum cupiditate sequi placeat possimus? Ratione quidem explicabo delectus vero enim unde odio blanditiis reiciendis tempore,
               aspernatur incidunt, praesentium quis sed fugit esse cum beatae vitae! Adipisci dolorum tempore quaerat cum magni ducimus culpa cupiditate vero expedita doloremque quo assumenda est iure totam cumque laudantium nisi nemo dolore officiis,
-              vitae, illo eum amet? Sapiente, blanditiis maiores quas vel laudantium rerum, rem ipsum laborum dolores distinctio quam eligendi?</p>
+              vitae, illo eum amet? Sapiente, blanditiis maiores quas vel laudantium rerum, rem ipsum laborum dolores distinctio quam eligendi?
+            </p>
           </div>
         </div>
 
-        <div style={{ margin: "0 auto", maxWidth: "1440px" }}>
+        <div className={styles.content}>
+          <h1>Categories</h1>
           <Categories />
         </div>
-        <Items />
+        <h1>Top products</h1>
+        <TopProducts />
       </div>
       <Footer />
     </>

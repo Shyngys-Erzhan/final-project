@@ -1,0 +1,14 @@
+.content {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1240px;
+  margin: 0 auto;
+  align-items: center;
+}
+p {
+  color: cyan;
+  font-size: 15px;
+}
+img {
+  width: 100px;
+}

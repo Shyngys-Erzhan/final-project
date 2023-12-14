@@ -1,7 +1,7 @@
 import { Header } from "../../components/header/header";
 import { Footer } from "../../components/footer/footer";
 import styles from "./catalog.module.css";
-import Categories from "../../api/get_categories.jsx";
+import Categories from "../../pages/home/categories/categories";
 
 function Catalog() {
 

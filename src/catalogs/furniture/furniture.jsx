@@ -6,9 +6,7 @@ function Furniture() {
   return (
     <>
       <Header />
-      <div className={styles.www}>
-
-      </div>
+      <div className={styles.www}></div>
       <Footer />
     </>
   );
