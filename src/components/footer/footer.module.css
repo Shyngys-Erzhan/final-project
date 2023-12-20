@@ -3,7 +3,7 @@
   max-width: 1600px;
   display: flex;
   justify-content: space-around;
-  position: relative;
+  position: fixed;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);

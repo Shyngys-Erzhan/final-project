@@ -7,6 +7,7 @@ function About() {
     <>
       <Header />
       <div className={styles.about}>
+
       </div>
       <Footer />
     </>
