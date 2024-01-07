@@ -15,6 +15,22 @@ export const router = createBrowserRouter([
   {
     path: "/catalog",
     element: <Catalog />,
+    children: [
+      {
+        path: ':categoryId',
+        element: <Catalog />,
+      },
+    ],
+  },
+  {
+    path: '/catalog',
+    element: <ProductDetails />,
+    children: [
+      {
+        path: 'v1/products/:productId',
+        element: <ProductDetails />,
+      },
+    ],
   },
   {
     path: "/about",
@@ -31,15 +47,5 @@ export const router = createBrowserRouter([
   {
     path: "/sign",
     element: <Sign />,
-  },
-  {
-    path: '/catalog',
-    element: <ProductDetails />,
-    children: [
-      {
-        path: 'v1/products/:productId',
-        element: <ProductDetails />,
-      },
-    ],
   },
 ]);

@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from 'react';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -6,7 +7,6 @@ import Categorize from './categorize/categorize';
 import Products from './products/products';
 import styles from "./catalog.module.css";
 import { useNavigate } from 'react-router-dom';
-
 
 const Catalog = () => {
   const navigate = useNavigate();
@@ -38,9 +38,23 @@ const Catalog = () => {
       console.error('Error loading products:', error);
     }
   };
+
   const handleProductClick = (productId) => {
     navigate(`/catalog/v1/products/${productId}`);
   };
+
+  const handleCategoryClick = (categoryId) => {
+    setSelectedCategory(categoryId);
+    navigate(`/catalog/${categoryId}`);
+  };
+
+  const onChangeSearchInput = (event) => {
+    setSearchValue(event.target.value);
+  };
+
+  const filteredProducts = products.filter((product) =>
+    product.title.toLowerCase().includes(searchValue.toLowerCase())
+  );
 
   useEffect(() => {
     loadCategories();
@@ -51,18 +65,6 @@ const Catalog = () => {
       loadProducts(selectedCategory);
     }
   }, [selectedCategory]);
-
-  const handleCategoryClick = (categoryId) => {
-    setSelectedCategory(categoryId);
-  };
-
-  const onChangeSearchInput = (event) => {
-    setSearchValue(event.target.value);
-  };
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
 
   return (
     <>
