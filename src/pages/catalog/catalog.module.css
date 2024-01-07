@@ -1,1 +1,25 @@
+.container {
+  display: block;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: center;
+}
+.page_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.content {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.content p {
+  font-size: 20px;
+  color: #fff;
+}
+
+
 

@@ -5,6 +5,7 @@ import About from "./pages/about/about.jsx";
 import Contacts from "./pages/contacts/contacts.jsx";
 import Card from "./pages/card/card.jsx";
 import Sign from "./pages/sign/sign.jsx";
+import ProductDetails from "./pages/catalog/products/product-details/product-details.jsx";
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +31,15 @@ export const router = createBrowserRouter([
   {
     path: "/sign",
     element: <Sign />,
+  },
+  {
+    path: '/catalog',
+    element: <ProductDetails />,
+    children: [
+      {
+        path: 'v1/products/:productId',
+        element: <ProductDetails />,
+      },
+    ],
   },
 ]);

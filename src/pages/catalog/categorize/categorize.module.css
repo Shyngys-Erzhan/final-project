@@ -1,0 +1,9 @@
+.page_categories_container ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+  color: #fff;
+  font-size: 20px;
+}

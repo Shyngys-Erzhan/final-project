@@ -6,7 +6,7 @@ function Card() {
   return (
     <>
       <Header />
-      <div className={styles.card}>k</div>
+      <div className={styles.card}></div>
       <Footer />
     </>
   );

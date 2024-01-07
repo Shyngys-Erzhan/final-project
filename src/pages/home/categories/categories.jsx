@@ -13,11 +13,13 @@ function Categories() {
     try {
       const response = await getCategories(
       );
-      if (response) {
+      if (response && response.length > 0) {
         setCategories(response);
+      } else {
+        console.error("Получен пустой ответ от сервера или неверный формат данных.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Произошла ошибка при получении данных:", error);
     }
   }
 
@@ -30,10 +32,15 @@ function Categories() {
   return (
     <>
       <div className={styles.container} >
-        {categories.map((categories) => (
-          <Link className={styles.link} key={categories.id} to={`/catalog/${categories.id}`}>
-            <img src={categories.image} alt={categories.name} />
-            <p>{categories.name}</p>
+        {categories.map((category) => (
+          <Link
+            className={styles.link}
+            key={category.id}
+            to={`/catalog`}
+          >
+            {/* /${category.id} */}
+            <img src={category.image} alt={category.name} />
+            <p>{category.name}</p>
           </Link>
         ))}
       </div>

@@ -1,0 +1,15 @@
+.input_content {
+  position: relative;
+}
+.closeButton {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  z-index: 1;
+}
+.input {
+  height: 20px;
+  width: 100%;
+}
