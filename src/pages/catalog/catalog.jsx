@@ -1,10 +1,9 @@
-
-import { useState, useEffect } from 'react';
+// Catalog.jsx
+import { useEffect, useState } from 'react';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
-import Input from './input/input';
-import Categorize from './categorize/categorize';
-import Products from './products/products';
+import CatalogHeader from './catalog-components/catalog-header/catalog-header';
+import CatalogContent from './catalog-components/catalog-content/catalog-content';
 import styles from "./catalog.module.css";
 import { useNavigate } from 'react-router-dom';
 
@@ -25,7 +24,7 @@ const Catalog = () => {
         setSelectedCategory(data[0].id);
       }
     } catch (error) {
-      console.error('Error loading categories:', error);
+      console.error('Ошибка при загрузке категорий:', error);
     }
   };
 
@@ -35,7 +34,7 @@ const Catalog = () => {
       const data = await response.json();
       setProducts(data);
     } catch (error) {
-      console.error('Error loading products:', error);
+      console.error('Ошибка при загрузке товаров:', error);
     }
   };
 
@@ -50,6 +49,10 @@ const Catalog = () => {
 
   const onChangeSearchInput = (event) => {
     setSearchValue(event.target.value);
+  };
+
+  const onClearSearch = () => {
+    setSearchValue('');
   };
 
   const filteredProducts = products.filter((product) =>
@@ -70,16 +73,14 @@ const Catalog = () => {
     <>
       <Header />
       <div className={styles.container}>
-        <div className={styles.page_header}>
-          <Categorize categories={categories} onCategoryClick={handleCategoryClick} />
-
-          <div className={styles.content}>
-            <p>{searchValue ? `Поиск по запросу: "${searchValue}"` : 'Все футболки'}</p>
-            <Input value={searchValue} onChange={onChangeSearchInput} onClear={() => setSearchValue('')} />
-          </div>
-        </div>
-
-        <Products products={filteredProducts} onProductClick={handleProductClick} />
+        <CatalogHeader
+          categories={categories}
+          onCategoryClick={handleCategoryClick}
+          searchValue={searchValue}
+          onChangeSearchInput={onChangeSearchInput}
+          onClearSearch={onClearSearch}
+        />
+        <CatalogContent filteredProducts={filteredProducts} onProductClick={handleProductClick} />
       </div>
       <Footer />
     </>

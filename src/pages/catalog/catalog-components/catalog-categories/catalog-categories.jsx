@@ -1,8 +1,8 @@
-import styles from './categorize.module.css';
+import styles from './catalog-categories.module.css';
 import PropTypes from 'prop-types';
 
 
-const Categorize = ({ categories, onCategoryClick }) => {
+const CatalogCategories = ({ categories, onCategoryClick }) => {
   return (
     <div className={styles.page_categories_container}>
       <ul>
@@ -15,7 +15,7 @@ const Categorize = ({ categories, onCategoryClick }) => {
     </div>
   );
 };
-Categorize.propTypes = {
+CatalogCategories.propTypes = {
   categories: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
@@ -25,4 +25,4 @@ Categorize.propTypes = {
   onCategoryClick: PropTypes.func.isRequired,
 };
 
-export default Categorize;
+export default CatalogCategories;
