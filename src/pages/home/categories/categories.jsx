@@ -38,7 +38,6 @@ function Categories() {
             key={category.id}
             to={`/catalog`}
           >
-            {/* /${category.id} */}
             <img src={category.image} alt={category.name} />
             <p>{category.name}</p>
           </Link>

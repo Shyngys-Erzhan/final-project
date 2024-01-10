@@ -2,10 +2,10 @@
 import { useEffect, useState } from 'react';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
+import { useNavigate } from 'react-router-dom';
 import CatalogHeader from './catalog-components/catalog-header/catalog-header';
 import CatalogContent from './catalog-components/catalog-content/catalog-content';
 import styles from "./catalog.module.css";
-import { useNavigate } from 'react-router-dom';
 
 const Catalog = () => {
   const navigate = useNavigate();

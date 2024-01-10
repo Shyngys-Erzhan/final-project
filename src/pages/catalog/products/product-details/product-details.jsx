@@ -6,23 +6,22 @@ import { Footer } from '../../../../components/footer/footer';
 import styles from './product-details.module.css';
 
 const ProductDetails = () => {
-  const { categoryId, productId: urlProductId } = useParams();
+  const { categoryId, productId: ProductId } = useParams();
 
   const [product, setProduct] = useState(null);
 
   useEffect(() => {
     const fetchProductDetails = async () => {
       try {
-        const response = await fetch(`https://api.escuelajs.co/api/v1/categories/${categoryId}/products/${urlProductId}`);
+        const response = await fetch(`https://api.escuelajs.co/api/v1/categories/${categoryId}/products/${ProductId}`);
         const data = await response.json();
         setProduct(data);
       } catch (error) {
         console.error('Error loading product details:', error);
       }
     };
-
     fetchProductDetails();
-  }, [categoryId, urlProductId]);
+  }, [categoryId, ProductId]);
 
   if (!product) {
     return <p>Loading...</p>;

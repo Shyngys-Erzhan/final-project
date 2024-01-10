@@ -1,0 +1,43 @@
+.video {
+  max-width: 900px;
+  display: block;
+  margin: auto;
+  border: double 5px #fff;
+}
+
+.video_content {
+  width: 100%;
+  margin: 50px auto;
+}
+
+.video_buttons {
+  justify-content: center;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  margin-top: 20px;
+}
+button {
+  background-color: #fff;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+button.active {
+  background-color: red;
+  color: #fff;
+}
+.text_content {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+h1 {
+  text-align: center;
+  margin: 0 auto;
+  padding-top: 30px;
+  color: #fff;
+  font-size: 40px;
+}
