@@ -1,4 +1,3 @@
-// Catalog.jsx
 import { useEffect, useState } from 'react';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
@@ -14,6 +13,7 @@ const Catalog = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [products, setProducts] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [filter, setFilter] = useState({});
 
   const loadCategories = async () => {
     try {
@@ -55,9 +55,9 @@ const Catalog = () => {
     setSearchValue('');
   };
 
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchValue.toLowerCase())
-  );
+  const onFilter = (newFilter) => {
+    setFilter(newFilter);
+  };
 
   useEffect(() => {
     loadCategories();
@@ -69,6 +69,20 @@ const Catalog = () => {
     }
   }, [selectedCategory]);
 
+  const filteredProducts = products
+    .filter((product) =>
+      product.title.toLowerCase().includes(searchValue.toLowerCase())
+    )
+    .filter((product) => {
+      if (filter.minPrice && product.price < filter.minPrice) {
+        return false;
+      }
+      if (filter.maxPrice && product.price > filter.maxPrice) {
+        return false;
+      }
+      return true;
+    });
+
   return (
     <>
       <Header />
@@ -79,6 +93,7 @@ const Catalog = () => {
           searchValue={searchValue}
           onChangeSearchInput={onChangeSearchInput}
           onClearSearch={onClearSearch}
+          onFilter={onFilter}
         />
         <CatalogContent filteredProducts={filteredProducts} onProductClick={handleProductClick} />
       </div>

@@ -1,20 +1,26 @@
-import styles from './products.module.css';
+import { Card } from 'antd';
 import PropTypes from 'prop-types';
 import { TbBrandShopee } from "react-icons/tb";
+import styles from './products.module.css';
 
+const { Meta } = Card;
 
 const Products = ({ products, onProductClick }) => {
   return (
     <div className={styles.product_content}>
       {products.map((product) => (
-        <div className={styles.card} key={product.id} onClick={() => onProductClick(product.title)}>
-          <img src={Array.isArray(product.images) ? product.images[0] : product.images} alt={product.title} />
-          <p>{product.title}</p>
+        <Card
+          key={product.id}
+          hoverable
+          style={{ width: 240 }}
+          cover={<img alt={product.title} src={Array.isArray(product.images) ? product.images[0] : product.images} />}
+          onClick={() => onProductClick(product.title)}
+        >
+          <Meta title={product.title} description={`${product.price}$`} />
           <div className={styles.card_shop}>
-            <p className={styles.title}>{product.price}$</p>
             <TbBrandShopee size="25" color="white" />
           </div>
-        </div>
+        </Card>
       ))}
     </div>
   );
@@ -30,7 +36,6 @@ Products.propTypes = {
     })
   ).isRequired,
   onProductClick: PropTypes.func.isRequired,
-
 };
 
 export default Products;

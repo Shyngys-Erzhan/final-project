@@ -47,11 +47,11 @@ function TopProducts() {
         <button onClick={arrowLeft}>
           <img className={style.img_left} src={left} />
         </button>
-        {products.map((categories) => (
-          <div className={style.card} key={categories.id}>
-            <img src={categories.images} />
-            <p>{categories.title}</p>
-            <p className={style.title}>{categories.price}$</p>
+        {products.map((products) => (
+          <div className={style.card} key={products.id}>
+            <img src={products.images} />
+            <p>{products.title}</p>
+            <p className={style.title}>{products.price}$</p>
           </div >
         ))
         }

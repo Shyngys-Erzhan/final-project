@@ -2,14 +2,18 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
 }
 .content {
   display: flex;
   align-items: center;
   gap: 50px;
 }
-.content p {
-  font-size: 20px;
-  color: #fff;
+.content h1 {
+  padding: 0 0 0 0;
+}
+
+.liveInputText {
+  color: #555;
+  font-size: 14px;
 }

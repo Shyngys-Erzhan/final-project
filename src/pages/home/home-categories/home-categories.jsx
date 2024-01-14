@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react"
 import { getCategories } from "../../../api/get-categories";
 import { Link } from "react-router-dom";
-import styles from "./categories.module.css";
+import styles from "./home-categories.module.css";
 
 
 function Categories() {

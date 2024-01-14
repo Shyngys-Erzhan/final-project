@@ -1,25 +1,30 @@
 .footer {
-  width: 1600px;
+  max-width: 1440px;
+  display: flex;
+  align-items: center;
+  background-color: #031225;
+  color: #fff;
+  padding: 10px;
+  justify-content: space-around;
+  margin: 0 auto;
+  border-radius: 50px;
+}
+
+.footerContent {
+  width: 100%;
   max-width: 1600px;
   display: flex;
+}
+
+.contacts {
+  display: flex;
   justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  align-items: center;
-  height: 70px;
-  border-radius: 50px;
-  background-color: #031225;
+  margin-top: 10px;
+  gap: 10px;
 }
 .footer p {
   color: #fff;
   font-size: 20px;
-}
-.contacts {
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
 }
 .footer_contacts_github {
   color: #fff;

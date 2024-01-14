@@ -1,4 +1,13 @@
 @import url("./assets/styles/normalize.css");
+
 body {
-  background-color: #21414E;
+  background-color: #21414e;
+}
+.wrapper {
+  background-color: #21414e;
+}
+
+.wrapper.darkMode {
+  background-color: black;
+  color: white;
 }

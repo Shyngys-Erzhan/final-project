@@ -88,3 +88,8 @@ img.rot {
   background-color: #fff;
   color: #000000;
 }
+
+.wrapper.darkMode {
+  background-color: black;
+  color: white;
+}

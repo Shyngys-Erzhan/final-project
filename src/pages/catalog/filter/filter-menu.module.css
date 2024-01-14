@@ -1,0 +1,42 @@
+.filterMenu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.filterHeader {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.filterContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filterContent label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.clearButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.clearButton:hover {
+  color: red;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+}
