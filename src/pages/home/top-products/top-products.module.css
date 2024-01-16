@@ -6,36 +6,43 @@
   align-items: center;
   margin-bottom: 30px;
 }
-p {
-  color: cyan;
-  font-size: 15px;
-  text-align: center;
-}
-img {
-  width: 200px;
+
+.buttonContainer {
   display: flex;
-  justify-content: center;
+  align-items: center;
 }
-.card {
-  border: 5px solid #fff;
-  background-color: #031225;
+
+.arrowButton {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
 }
-.title {
-  text-align: center;
-}
-.img_left {
-  width: 50px;
-  height: 50px;
-  background-color: #21414e;
-}
+
+.img_left,
 .img_right {
   width: 50px;
   height: 50px;
   background-color: #21414e;
 }
+
+.cardContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.productCard {
+  width: 248px;
+  height: 250px;
+  border: 5px solid #fff;
+}
+
+.productImage {
+  height: 150px;
+  object-fit: cover;
+}
 .content button {
-  margin: 0;
-  padding: 0;
   border: none;
   font: inherit;
   color: inherit;

@@ -1,0 +1,12 @@
+.product_content {
+  max-width: 1440px;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.product_card {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}

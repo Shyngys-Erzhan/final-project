@@ -39,7 +39,8 @@ const Catalog = () => {
   };
 
   const handleProductClick = (productId) => {
-    navigate(`/catalog/v1/products/${productId}`);
+    console.log('Clicked product name:', productId);
+    navigate(`/catalog/${selectedCategory}/detail/${productId}`);
   };
 
   const handleCategoryClick = (categoryId) => {

@@ -5,7 +5,8 @@ import { IoHome } from "react-icons/io5";
 import { useDispatch, useSelector } from "react-redux";
 import { Switch } from "antd";
 import { toggleTheme } from "../../actions/themeActions";
-import styles from "./header.module.css"; import reactImg from "../../assets/images/react.png";
+import styles from "./header.module.css";
+import reactImg from "../../assets/images/react.png";
 
 
 export const Header = () => {

@@ -1,9 +1,5 @@
 .page_categories_container ul {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 100px;
-  list-style: none;
-  color: #fff;
   font-size: 20px;
+  background-color: #21414e;
 }

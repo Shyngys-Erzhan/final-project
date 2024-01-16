@@ -1,55 +1,83 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { Modal, Button, InputNumber } from 'antd';
 import styles from './filter-menu.module.css';
-import { BsX } from 'react-icons/bs';
-import FilterButton from './filter-button/filter-button';
 
 const FilterMenu = ({ onFilter, onClose }) => {
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
 
+  useEffect(() => {
+    // Загрузка данных из localStorage при монтировании компонента
+    const savedMinPrice = localStorage.getItem('minPrice');
+    const savedMaxPrice = localStorage.getItem('maxPrice');
+
+    if (savedMinPrice !== null) {
+      setMinPrice(savedMinPrice);
+    }
+
+    if (savedMaxPrice !== null) {
+      setMaxPrice(savedMaxPrice);
+    }
+  }, []);
+
   const handleFilterClick = () => {
     onFilter({ minPrice, maxPrice });
+    saveToLocalStorage(); // Сохранение данных в localStorage при применении фильтра
+    onClose(); // Закрыть модальное окно после применения фильтра
   };
 
   const handleClearClick = () => {
     setMinPrice('');
     setMaxPrice('');
-    onFilter({});
+    clearLocalStorage(); // Очистка данных в localStorage при очистке фильтра
+  };
+
+  const saveToLocalStorage = () => {
+    localStorage.setItem('minPrice', minPrice);
+    localStorage.setItem('maxPrice', maxPrice);
+  };
+
+  const clearLocalStorage = () => {
+    localStorage.removeItem('minPrice');
+    localStorage.removeItem('maxPrice');
   };
 
   return (
-    <div className={styles.filterMenu}>
-      <div className={styles.filterHeader}>
-        <button className={styles.clearButton} onClick={onClose}>
-          <BsX size="20" color='red' />
-        </button>
-      </div>
+    <Modal
+      title="Фильтр"
+      visible={true}
+      onCancel={onClose}
+      footer={[
+        <Button key="clear" onClick={handleClearClick}>
+          Очистить
+        </Button>,
+        <Button key="apply" type="primary" onClick={handleFilterClick}>
+          Применить
+        </Button>,
+      ]}
+    >
       <div className={styles.filterContent}>
-        <label>
-          Минимальная цена:
-          <input
-            type="number"
-            placeholder="введите текст"
+        <div className={styles.filterItem}>
+          <label>Минимальная цена:</label>
+          <InputNumber
+            style={{ width: '100%' }}
+            placeholder="Введите минимальную цену"
             value={minPrice}
-            onChange={(e) => setMinPrice(e.target.value)}
+            onChange={(value) => setMinPrice(value)}
           />
-        </label>
-        <label>
-          Максимальная цена:
-          <input
-            type="number"
-            placeholder="введите текст"
+        </div>
+        <div className={styles.filterItem}>
+          <label>Максимальная цена:</label>
+          <InputNumber
+            style={{ width: '100%' }}
+            placeholder="Введите максимальную цену"
             value={maxPrice}
-            onChange={(e) => setMaxPrice(e.target.value)}
+            onChange={(value) => setMaxPrice(value)}
           />
-        </label>
+        </div>
       </div>
-      <div className={styles.buttonContainer}>
-        <FilterButton label="Применить" onClick={handleFilterClick} />
-        <FilterButton label="Очистить" onClick={handleClearClick} />
-      </div>
-    </div>
+    </Modal>
   );
 };
 

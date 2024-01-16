@@ -1,15 +1,17 @@
+  .sceleton {
+    width: 910px;
+    height: 520px;
+  }
 .video {
   max-width: 900px;
   display: block;
   margin: auto;
   border: double 5px #fff;
 }
-
 .video_content {
   width: 100%;
   margin: 50px auto;
 }
-
 .video_buttons {
   justify-content: center;
   display: flex;
@@ -34,10 +36,11 @@ button.active {
   max-width: 1000px;
   margin: 0 auto;
 }
-h1 {
+.text {
+  display: flex;
   text-align: center;
   margin: 0 auto;
   padding-top: 30px;
   color: #fff;
-  font-size: 40px;
+  font-size: 20px;
 }

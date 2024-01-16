@@ -14,7 +14,7 @@ const Products = ({ products, onProductClick }) => {
           hoverable
           style={{ width: 240 }}
           cover={<img alt={product.title} src={Array.isArray(product.images) ? product.images[0] : product.images} />}
-          onClick={() => onProductClick(product.title)}
+          onClick={() => onProductClick(product.id)}
         >
           <Meta title={product.title} description={`${product.price}$`} />
           <div className={styles.card_shop}>
