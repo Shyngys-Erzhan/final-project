@@ -1,3 +1,4 @@
+
 const initialState = {
   darkMode: false,
 };
@@ -13,4 +14,5 @@ const themeReducer = (state = initialState, action) => {
       return state;
   }
 };
+
 export default themeReducer;

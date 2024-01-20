@@ -2,20 +2,25 @@ import { Link } from "react-router-dom";
 import { TbBrandShopee } from "react-icons/tb";
 import { MdOutlineAccountCircle } from "react-icons/md";
 import { IoHome } from "react-icons/io5";
-import { useDispatch, useSelector } from "react-redux";
 import { Switch } from "antd";
-import { toggleTheme } from "../../actions/themeActions";
 import styles from "./header.module.css";
 import reactImg from "../../assets/images/react.png";
+import { useTheme } from "../../contexts/themeUtils";
 
 
 export const Header = () => {
-  const dispatch = useDispatch();
-  const darkMode = useSelector((state) => state.theme.darkMode);
+  const { themeState, dispatch } = useTheme();
+  const { darkMode } = themeState;
 
   const toggleThemeHandler = () => {
-    dispatch(toggleTheme());
+    dispatch({ type: "TOGGLE_THEME" });
+
+
+    const body = document.body;
+    body.style.backgroundColor = darkMode ? "#57585E" : "linear-gradient(to top right, white, rgb(56, 55, 55))";
   };
+
+
 
   return (
     <div className={`${styles.wrapper} ${darkMode ? styles.darkMode : ""}`}>
@@ -49,10 +54,10 @@ export const Header = () => {
         </ul>
       </div>
       <div className={styles.nav2}>
-        <Link to="/Card" className={styles.linkImg}>
+        <Link to="/Cart" className={styles.link}>
           <TbBrandShopee size="30" color="white" />
         </Link>
-        <Link to="/Sign" className={styles.sign}>
+        <Link to="/Sign" className={styles.link}>
           <MdOutlineAccountCircle size="25" color="white" />
         </Link>
         <Switch defaultChecked={darkMode} onChange={toggleThemeHandler} />

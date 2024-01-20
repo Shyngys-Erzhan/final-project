@@ -2,8 +2,7 @@
   max-width: 1440px;
   display: flex;
   align-items: center;
-  background-color: #031225;
-  color: #fff;
+  background: rgb(105, 104, 104);
   padding: 10px;
   justify-content: space-around;
   margin: 0 auto;
@@ -41,4 +40,11 @@
 .footer_contacts_telegram {
   color: #fff;
   font-size: 20px;
+}
+.footer.darkMode {
+  background-color: black;
+  color: white;
+}
+.footer.darkMode {
+  background-color: rgb(248, 44, 231);
 }

@@ -5,8 +5,29 @@
   margin-top: 30px;
   margin-bottom: 30px;
 }
-.product_card {
+.product_details {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 auto;
+  align-items: center;
+}
+.product_image img {
+  width: 400px;
+  height: 400px;
+  margin-right: 20px;
+}
+.product_info {
+  width: 500px;
+  height: 500px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
+}
+.loading_container {
+  max-width: 1440px;
   margin: 0 auto;
+}
+.loading_container p {
+  color: rgb(255, 0, 0);
+  font-size: 35px;
 }

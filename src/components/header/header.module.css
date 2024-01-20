@@ -4,8 +4,12 @@
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
-  background-color: #031225;
+  background: rgb(105, 104, 104);
   border-radius: 50px;
+}
+.activeLink {
+  color: red;
+  font-weight: bold;
 }
 .wrapper ul {
   display: flex;
@@ -88,8 +92,9 @@ img.rot {
   background-color: #fff;
   color: #000000;
 }
-
 .wrapper.darkMode {
-  background-color: black;
-  color: white;
+  background-color: rgb(248, 44, 231);
+}
+body {
+  background: linear-gradient(to bottom left, black, rgb(252, 246, 246));
 }

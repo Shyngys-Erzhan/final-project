@@ -4,9 +4,11 @@
   margin: 0 auto;
   align-items: center;
   margin-bottom: 30px;
-row-gap: 20px;
-column-gap: 20px;
-flex-wrap: wrap;
+  row-gap: 20px;
+  column-gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: linear-gradient(to bottom left, white, rgb(34, 33, 33));
 }
 .product_content p {
   color: cyan;
@@ -23,11 +25,8 @@ flex-wrap: wrap;
   transition: 0.5s;
 }
 .card_shop {
-  max-width: 150px;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-margin: 0 auto;}
+  margin-top: 10px;
+}
 img {
   width: 200px;
   display: flex;
@@ -35,4 +34,15 @@ img {
 }
 .title {
   text-align: center;
+}
+.loading_container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.loading_container p {
+  color: rgb(255, 0, 0);
+  font-size: 35px;
+}
+.product_content.darkMode {
+  background-color: rgb(152, 28, 224);
 }

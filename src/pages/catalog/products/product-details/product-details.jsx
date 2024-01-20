@@ -1,18 +1,22 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Card, Typography, Spin } from 'antd';
+import { Card, Typography, Spin, Button } from 'antd';
 import { Header } from '../../../../components/header/header';
 import { Footer } from '../../../../components/footer/footer';
 import styles from './product-details.module.css';
+import { TbBrandShopee } from "react-icons/tb";
+
 
 const { Title, Text } = Typography;
 
 const ProductDetails = () => {
   const { productId } = useParams();
-
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+
 
   useEffect(() => {
     const fetchProductDetails = async () => {
@@ -39,12 +43,26 @@ const ProductDetails = () => {
     };
   }, [productId]);
 
+  const nextImage = () => {
+    if (product && product.images.length > 0) {
+      const newIndex = (currentImageIndex + 1) % product.images.length;
+      setCurrentImageIndex(newIndex);
+    }
+  };
+
+  const prevImage = () => {
+    if (product && product.images.length > 0) {
+      const newIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+      setCurrentImageIndex(newIndex);
+    }
+  };
+
   if (loading) {
     return (
       <>
         <Header />
         <Spin tip="Loading...">
-          <div style={{ height: '200px' }} />
+          <div style={{ width: '200px', height: '200px' }} />
         </Spin>
         <Footer />
       </>
@@ -56,17 +74,35 @@ const ProductDetails = () => {
       <Header />
       <div className={styles.product_content}>
         {product ? (
-          <Card
-            className={styles.product_card}
-            hoverable
-            style={{ width: 300 }}
-            cover={<img alt={product.title} src={product.images[0]} />}
-          >
-            <Title level={4}>{product.title}</Title>
-            <Text strong>{`${product.price}$`}</Text>
-          </Card>
+          <div className={styles.product_details}>
+            <div className={styles.product_image}>
+              <img alt={product.title} src={product.images[currentImageIndex]} />
+              <div>
+                <Button onClick={prevImage}>Previous</Button>
+                <Button onClick={nextImage}>Next</Button>
+              </div>
+            </div>
+            <div className={styles.product_info}>
+              <Card className={styles.product_card} hoverable style={{ width: 300 }} >
+                <Title level={4}>{product.title}</Title>
+                <p>{product.description}</p>
+                <Text strong>Category: {product.category.name}</Text>
+                <p >Price: {product.price}$</p>
+                <div className={styles.card_shop}>
+                  <Button >
+                    <TbBrandShopee size="25" color="black" />
+                  </Button>
+                </div>
+              </Card>
+            </div>
+          </div>
         ) : (
-          <p>No product details available</p>
+          <div className={styles.loading_container}>
+            <Spin tip="Loading...">
+              <div style={{ width: '200px', height: '200px' }} />
+              <p>Product not found</p>
+            </Spin>
+          </div>
         )}
       </div>
       <Footer />
@@ -84,4 +120,3 @@ ProductDetails.propTypes = {
 };
 
 export default ProductDetails;
-

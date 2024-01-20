@@ -11,7 +11,7 @@ const CatalogCategories = ({ categories, onCategoryClick }) => {
     <div className={styles.page_categories_container}>
       <Menu mode="vertical">
         {categories.map((category) => (
-          <Menu.Item key={category.id} onClick={() => handleClick(category)} item={category}>
+          <Menu.Item key={category.id} onClick={() => handleClick(category)}>
             {category.name}
           </Menu.Item>
         ))}

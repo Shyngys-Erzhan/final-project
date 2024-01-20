@@ -44,7 +44,7 @@ function TopProducts() {
         {products.map((product) => (
           <Card key={product.id} hoverable className={style.productCard}>
             <img src={product.images} alt={product.title} className={style.productImage} />
-            <Meta title={product.title} description={`${product.price}$`} className={style.productText}/>
+            <Meta title={product.title} description={`${product.price}$`} className={style.productText} />
           </Card>
         ))}
       </div>
