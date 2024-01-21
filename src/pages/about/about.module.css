@@ -1,4 +1,15 @@
-.custom-paragraph {
+.custom_paragraph {
   font-size: 20px;
   font-family: "Ваш выбранный шрифт", sans-serif;
+  width: 1000px;
+}
+.icons {
+  display: flex;
+  justify-content: center;
+  width: 600px;
+  margin-top: 20px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  column-gap: 100px;
+  grid-row-gap: 50px;
 }

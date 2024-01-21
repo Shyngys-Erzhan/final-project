@@ -1,5 +1,5 @@
 .page_categories_container ul {
   display: flex;
   font-size: 20px;
-  background-color: #21414e;
+  background: linear-gradient(to bottom left, black, rgb(252, 246, 246));
 }
