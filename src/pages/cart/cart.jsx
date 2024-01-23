@@ -1,38 +1,28 @@
-import { Header } from "../../components/header/header";
-import { Footer } from "../../components/footer/footer";
-// import { useState, useEffect } from "react";
+import { Header } from '../../components/header/header';
+import { Footer } from '../../components/footer/footer';
+import Products from '../../pages/catalog/products/products';
 import styles from "./cart.module.css";
 
-function Cart() {
-  // const [cart, setCart] = useState([]);
-  // const [loading, setLoading] = useState(true);
-
-
-
-  // const fetchCart = async () => {
-  //   try {
-  //     const response = await fetch('https://api.escuelajs.co/api/v1/categories/6');
-  //     const data = await response.json();
-  //     setCart(data);
-  //   } catch (error) {
-  //     console.error('Ошибка при загрузке корзины:', error);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
-
-  // useEffect(() => {
-  //   fetchCart();
-  // }, []);
+const Cart = () => {
+  const getCartItems = () => {
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    return storedCart;
+  };
 
   return (
     <>
       <Header />
-      <div className={styles.card}></div>
+      <Products
+        products={getCartItems()}
+        onProductClick={(productId) => console.log(productId)}
+        onRemoveFromCartClick={(productId) => console.log(`Удалить товар с ID ${productId}`)}
+        cardClassName={styles.carts}
+        cardContent={styles.cart_content}
+      />
       <Footer />
     </>
   );
-}
+};
 
 export default Cart;
+

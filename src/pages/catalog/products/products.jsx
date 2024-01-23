@@ -1,93 +1,61 @@
-import { useState } from 'react';
-import { Card, Button } from 'antd';
+import { Card, Button, message } from 'antd';
 import PropTypes from 'prop-types';
 import { TbBrandShopee } from 'react-icons/tb';
+import { MdDeleteForever } from "react-icons/md";
 import styles from './products.module.css';
 import { useTheme } from '../../../contexts/themeUtils';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const { Meta } = Card;
 
-const Products = ({ products, onProductClick }) => {
-  const [categoryData, setCategoryData] = useState({
-    name: 'Card',
-    image: 'https://placeimg.com/640/480/any',
-    products: [],
-  });
-
-
+const Products = ({ products, onProductClick, onRemoveFromCartClick, cardClassName, cardContent }) => {
   const { themeState } = useTheme();
   const { darkMode } = themeState;
 
-
+  const [cart, setCart] = useState([]);
 
   useEffect(() => {
-    console.log("Theme updated in Footer:", darkMode);
-  }, [darkMode]);
+    const storedCart = JSON.parse(localStorage.getItem('cart')) || [];
+    setCart(storedCart);
+  }, []);
 
-
-  const handleCreateCategory = async (productId) => {
-    try {
-      if (!categoryData.products.includes(productId)) {
-        const productToAdd = products.find((product) => product.id === productId);
-
-        const categoryId = 'Card';
-
-        const requestData = {
-          name: categoryId,
-          image: productToAdd.images[0],
-          product: {
-            id: productToAdd.id,
-            title: productToAdd.title,
-            price: productToAdd.price,
-          },
-        };
-
-        if (!requestData.name) {
-          console.error('Ошибка: поле name не должно быть пустым');
-          return;
-        }
-
-        const response = await fetch(`https://api.escuelajs.co/api/v1/cards/1`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(requestData),
-        });
-
-        if (response.ok) {
-          console.log('Товар успешно добавлен в категорию');
-          setCategoryData({ ...categoryData, products: [...categoryData.products, productId] });
-        } else {
-          console.error('Ошибка при добавлении товара в категорию');
-          console.error(await response.text());
-        }
-      } else {
-        console.log('Товар уже добавлен в категорию');
-      }
-    } catch (error) {
-      console.error('Произошла ошибка:', error);
+  const addToCart = (productId) => {
+    if (!cart.find(item => item.id === productId)) {
+      const selectedProduct = products.find(product => product.id === productId);
+      const newCart = [...cart, { id: productId, title: selectedProduct.title, price: selectedProduct.price, images: selectedProduct.images }];
+      setCart(newCart);
+      localStorage.setItem('cart', JSON.stringify(newCart));
+      message.success('Product added to cart');
     }
-  };
+  }
 
-
-
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter(item => item.id !== productId);
+    setCart(updatedCart);
+    localStorage.setItem('cart', JSON.stringify(updatedCart));
+    onRemoveFromCartClick && onRemoveFromCartClick(productId);
+    message.error('Product removed from cart');
+  }
 
   return (
-    <div className={`${styles.product_content} ${darkMode ? styles.darkMode : ""}`}>
+    <div className={`${styles.product_content} ${darkMode ? styles.darkMode : ""} ${cardContent}`}>
       {products.map((product) => (
         <Card
           key={product.id}
           hoverable
           style={{ width: 240, margin: 10 }}
-          cover={<img alt={product.title} src={Array.isArray(product.images) ? product.images[0] : product.images} />}
-          onClick={() => onProductClick(product.id)}
+          className={`${styles.productCard} ${darkMode ? styles.darkMode : ""} ${cardClassName}`}
+          cover={<img alt={product.title} src={Array.isArray(product.images) ? product.images[0] : product.images} onClick={() => onProductClick(product.id)}
+          />}
         >
-          <Meta title={product.title} description={`${product.price}$`} />
+          <Meta title={product.title} description={`${product.price} $`} />
           <div className={styles.card_shop}>
-            <Button onClick={() => handleCreateCategory(product.id)}>
+            <Button onClick={() => addToCart(product.id)} type='primary' style={{ backgroundColor: cart.find(item => item.id === product.id) ? 'blue' : 'white' }}
+            >
               <TbBrandShopee size="25" color="black" />
+            </Button>
+            <Button onClick={() => removeFromCart(product.id)} type='danger' >
+              <MdDeleteForever size="25" color="black" />
             </Button>
           </div>
         </Card>
@@ -105,8 +73,10 @@ Products.propTypes = {
       price: PropTypes.number.isRequired,
     })
   ).isRequired,
+  onRemoveFromCartClick: PropTypes.func,
   onProductClick: PropTypes.func.isRequired,
+  cardClassName: PropTypes.string,
+  cardContent: PropTypes.string,
 };
 
 export default Products;
-

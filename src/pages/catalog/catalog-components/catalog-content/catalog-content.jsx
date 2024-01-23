@@ -10,7 +10,6 @@ const CatalogContent = ({ filteredProducts, onProductClick }) => {
     </div>
   );
 };
-
 CatalogContent.propTypes = {
   filteredProducts: PropTypes.array.isRequired,
   onProductClick: PropTypes.func.isRequired,

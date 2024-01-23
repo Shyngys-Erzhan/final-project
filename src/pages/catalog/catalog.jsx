@@ -38,6 +38,7 @@ const Catalog = () => {
     }
   };
 
+
   const handleProductClick = (productId) => {
     console.log('Clicked product name:', productId);
     navigate(`/catalog/${selectedCategory}/detail/${productId}`);

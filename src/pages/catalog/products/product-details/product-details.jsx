@@ -5,7 +5,7 @@ import { Card, Typography, Spin, Button } from 'antd';
 import { Header } from '../../../../components/header/header';
 import { Footer } from '../../../../components/footer/footer';
 import styles from './product-details.module.css';
-import { TbBrandShopee } from "react-icons/tb";
+// import { TbBrandShopee } from "react-icons/tb";
 
 
 const { Title, Text } = Typography;
@@ -89,9 +89,7 @@ const ProductDetails = () => {
                 <Text strong>Category: {product.category.name}</Text>
                 <p >Price: {product.price}$</p>
                 <div className={styles.card_shop}>
-                  <Button >
-                    <TbBrandShopee size="25" color="black" />
-                  </Button>
+
                 </div>
               </Card>
             </div>
