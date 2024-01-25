@@ -5,6 +5,7 @@ import style from "./top-products.module.css";
 import left from "../../../assets/images/pointer-left-svgrepo-com.svg";
 import right from "../../../assets/images/pointer-right-svgrepo-com.svg";
 
+
 const { Meta } = Card;
 
 function TopProducts() {

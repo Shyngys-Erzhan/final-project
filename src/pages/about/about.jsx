@@ -1,16 +1,30 @@
 import PropTypes from 'prop-types';
-import { Typography, Card, Row, Col, Divider, Space } from 'antd';
+import { Typography, Card } from 'antd';
 import { Header } from '../../components/header/header';
 import { Footer } from '../../components/footer/footer';
 import styles from './about.module.css';
-import { FaHtml5 } from "react-icons/fa";
-import { SiCss3 } from "react-icons/si";
-import { SiJavascript } from "react-icons/si";
-import { TbBrandRedux } from "react-icons/tb";
-import { FaReact } from "react-icons/fa";
-import { SiAntdesign } from "react-icons/si";
-import { IoLogoVue } from "react-icons/io5";
+import { Link } from 'react-router-dom';
+import { BiCategory } from "react-icons/bi";
+import { LuShoppingCart } from "react-icons/lu";
+import { RiContactsBook2Line } from "react-icons/ri";
+import { FaRegCircleCheck } from "react-icons/fa6";
+import { TbShoppingBagCheck } from "react-icons/tb";
+import { MdOutlinePercent } from "react-icons/md";
 
+
+
+
+
+// import { FaHtml5 } from "react-icons/fa";
+// import { SiCss3 } from "react-icons/si";
+// import { SiJavascript } from "react-icons/si";
+// import { TbBrandRedux } from "react-icons/tb";
+// import { FaReact } from "react-icons/fa";
+// import { SiAntdesign } from "react-icons/si";
+// import { IoLogoVue } from "react-icons/io5";
+// import { AboutBgImage } from '../../assets/images/backgroundForAbout.jpg'
+// , Row, Col, Divider, Space
+import MetaVerse from '../../assets/images/Tokyo.jpeg'
 
 const { Title, Paragraph } = Typography;
 
@@ -31,56 +45,29 @@ FeatureCard.propTypes = {
 const About = () => {
   return (
     <>
-      <Header />
-      <div className="container">
-        <Title level={2} className="title">
-          Добро пожаловать на страницу React Shop!
-        </Title>
-
-        <Paragraph className={styles.custom_paragraph}>
-          Мы - команда энтузиастов, создавших React Shop с любовью к качественным продуктам и современным технологиям. Наш магазин предоставляет широкий выбор товаров в пяти удобных категориях: Clothes, Electronics, Furniture, Shoes, Miscellaneous
-          . Мы стремимся удовлетворить потребности наших клиентов, предлагая только лучшие продукты по доступным ценам.
-        </Paragraph>
-        <Divider />
-
-        <Row gutter={[16, 16]}>
-          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-            <FeatureCard
-              title="Инновации и Технологии"
-              description="Мы гордимся тем, что предлагаем современные электронные устройства, ультрасовременные тренды в одежде и высококачественную обувь. В нашем ассортименте вы найдете продукты, соответствующие последним технологическим достижениям."
-            />
-          </Col>
-
-          <Col xs={24} sm={24} md={12} lg={12} xl={12}>
-            <FeatureCard
-              title="Дизайн с учетом пользователя"
-              description="Мы используем библиотеку Ant Design для создания красивого и интуитивно понятного интерфейса нашего магазина. Наша цель - сделать покупки в React Shop приятным и легким процессом для каждого клиента."
-            />
-          </Col>
-        </Row>
-        <Divider />
+      <div className={styles.container}>
+        <Header />
+        <div className={styles.about_header}>
+          <div className={styles.about_header_content}>
+            <Link to="/" className={styles.link} >Back to Home</Link>
+          </div>
+          <img src={MetaVerse} alt={MetaVerse} className={styles.header_img} />
+        </div>
 
 
-        <Title level={2} className="subtitle" style={{ marginTop: '20px', fontSize: '24px' }}>
-          Что я использовал для создания этого сайта?
-        </Title>
-        <Space style={{ fontSize: '60px' }} className={styles.icons}>
-          <FaHtml5 className="icon" style={{ color: '#F75421' }} />
-          <SiCss3 className="icon" style={{ color: '#0870C2' }} />
-          <SiJavascript className="icon" style={{ color: '#FFE008', backgroundColor: '#000' }} />
-          <FaReact className="icon" style={{ backgroundColor: '#61DBFB', color: '#fff' }} />
-          <SiAntdesign className="icon" style={{ color: '#1890FF' }} />
-          <TbBrandRedux className="icon" style={{ color: '#7A50BE' }} />
-          <IoLogoVue className="icon" style={{ color: '#41B883', backgroundColor: 'black' }} />
-        </Space>
-        <Divider />
+        <div className={styles.about_body}>
+          <div className={styles.card1}><Link to="/catalog" className={styles.cart_link}>Variety of categories </Link><BiCategory className={styles.card_icons} /></div>
+          <div className={styles.card3}><Link to="/cart" className={styles.cart_link}>Convenient shopping cart</Link><LuShoppingCart className={styles.card_icons} /></div>
+          <div className={styles.card2}><Link to="/contacts" className={styles.cart_link}>Brand-name products</Link><RiContactsBook2Line className={styles.card_icons} /> </div>
+          <div className={styles.card4}><p className={styles.cart_link}>Quality guarantee</p><FaRegCircleCheck className={styles.card_icons} /></div>
+          <div className={styles.card5}><p className={styles.cart_link}> Brand-name products</p><TbShoppingBagCheck className={styles.card_icons} /></div>
+          <div className={styles.card6}><p className={styles.cart_link}>Promotions and discounts</p><MdOutlinePercent className={styles.card_icons} /></div>
 
 
-        <Paragraph className={styles.custom_paragraph}>
-          Спасибо, что выбрали React Shop! Мы постоянно совершенствуемся, чтобы предоставлять вам лучший опыт покупок. Если у вас есть какие-либо вопросы или комментарии, не стесняйтесь обращаться!
-        </Paragraph>
+        </div>
+
+        <Footer />
       </div>
-      <Footer />
     </>
   );
 };

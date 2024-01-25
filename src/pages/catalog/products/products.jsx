@@ -25,7 +25,7 @@ const Products = ({ products, onProductClick, onRemoveFromCartClick, cardClassNa
       const newCart = [...cart, { id: productId, title: selectedProduct.title, price: selectedProduct.price, images: selectedProduct.images }];
       setCart(newCart);
       localStorage.setItem('cart', JSON.stringify(newCart));
-      message.success('Product added to cart');
+      message.success('Продукт добавлен в корзину');
     }
   }
 
@@ -34,7 +34,7 @@ const Products = ({ products, onProductClick, onRemoveFromCartClick, cardClassNa
     setCart(updatedCart);
     localStorage.setItem('cart', JSON.stringify(updatedCart));
     onRemoveFromCartClick && onRemoveFromCartClick(productId);
-    message.error('Product removed from cart');
+    message.error('Продукт удален из корзины');
   }
 
   return (
@@ -55,12 +55,13 @@ const Products = ({ products, onProductClick, onRemoveFromCartClick, cardClassNa
               <TbBrandShopee size="25" color="black" />
             </Button>
             <Button onClick={() => removeFromCart(product.id)} type='danger' >
-              <MdDeleteForever size="25" color="black" />
+              <MdDeleteForever size="25" color="red" />
             </Button>
           </div>
         </Card>
-      ))}
-    </div>
+      ))
+      }
+    </div >
   );
 };
 

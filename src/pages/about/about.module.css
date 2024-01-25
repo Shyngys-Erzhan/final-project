@@ -1,15 +1,104 @@
-.custom_paragraph {
-  font-size: 20px;
-  font-family: "Ваш выбранный шрифт", sans-serif;
-  width: 1000px;
-}
-.icons {
-  display: flex;
-  justify-content: center;
-  width: 600px;
-  margin-top: 20px;
+.about_header {
+  max-width: 100%;
   margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  background: linear-gradient(to bottom left, black, rgb(43, 43, 43));
+}
+.about_header_content {
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  max-width: 960px;
+  padding: 1rem;
+}
+.link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 60px;
+  font-weight: 700;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
+}
+.link:hover {
+  color: #000;
+  background-color: #fff;
+  transition: 1s;
+}
+.header_img {
+  width: 960px;
+  height: 384px;
+}
+
+.about_body {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: flex;
   flex-wrap: wrap;
-  column-gap: 100px;
-  grid-row-gap: 50px;
+  color: #fff;
+  gap: 10px;
+  padding-top: 60px;
+}
+.card1,
+.card2,
+.card3,
+.card4,
+.card5,
+.card6 {
+  display: flex;
+  width: 400px;
+  height: 200px;
+  background-color: #000;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.card1:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card2:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card3:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card4:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card5:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card6:hover{
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+.card_icons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+}
+.cart_link{
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  background-color: #000;
+  transition: all 0.3s ease-in-out;
 }
