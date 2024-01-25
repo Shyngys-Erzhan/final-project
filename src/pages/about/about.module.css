@@ -1,9 +1,12 @@
+.container {
+  background: linear-gradient(to bottom left, black, rgb(70, 69, 69));
+}
 .about_header {
   max-width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  background: linear-gradient(to bottom left, black, rgb(43, 43, 43));
+  background-color: #000000ad;
 }
 .about_header_content {
   display: flex;
@@ -55,32 +58,32 @@
   justify-content: space-around;
   position: relative;
 }
-.card1:hover{
+.card1:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
 }
-.card2:hover{
+.card2:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
 }
-.card3:hover{
+.card3:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
 }
-.card4:hover{
+.card4:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
 }
-.card5:hover{
+.card5:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
 }
-.card6:hover{
+.card6:hover {
   background-color: #fff;
   color: #000;
   transition: 0.5s;
@@ -92,8 +95,11 @@
   width: 50px;
   height: 50px;
 }
-.cart_link{
-  color: #fff;
+.cart_link {
+  display: flex;
+  bottom: 0;
+  position: absolute;
+  left: 0;
   text-decoration: none;
   font-size: 20px;
   font-weight: 700;
@@ -101,4 +107,98 @@
   border-radius: 0.5rem;
   background-color: #000;
   transition: all 0.3s ease-in-out;
+  color: #fff;
+}
+.about_body2 {
+  max-width: 1220px;
+  margin: 0 auto;
+  color: #fff;
+  gap: 10px;
+  margin-top: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.body2_card1 {
+  width: 600px;
+  height: 311.4px;
+  background-color: rgb(0, 0, 0);
+}
+.body2_card1_content {
+  margin: 5px 5px 5px 5px;
+  background-color: rgb(43, 42, 42);
+}
+.anime {
+  width: 600px;
+  height: auto;
+}
+.body2_card1_icons {
+  display: flex;
+  justify-content: space-around;
+}
+.body2_icons {
+  width: 45px;
+  height: 45px;
+  border: solid 5px #000;
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #000;
+}
+.body2_card1_title {
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 0;
+}
+.body2_card1_text1 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 10px;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+.body2_card1_text2 {
+  font-size: 20px;
+  font-weight: 400;
+  padding-left: 10px;
+  margin-top: 10px;
+}
+.about_body3 {
+  width: 1220px;
+  height: 200px;
+  margin: 0 auto;
+  background-image: url("../../assets/images/aesthetic.jpg");
+  position: relative;
+  margin-top: 60px;
+}
+.about_body3 h2 {
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 50px;
+  font-weight: 1000;
+  text-align: center;
+  color: white;
+}
+.strike_through {
+  text-decoration: line-through;
+  color: black;
+}
+.about_body4 {
+  max-width: 1220px;
+  margin: 0 auto;
+  background-color: #000;
+  gap: 10px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 30px;
+  border-radius: 20px;
+}
+.icon {
+  width: 50px;
+  height: 50px;
+  padding: 30px;
+  background-color: #000;
 }
