@@ -53,10 +53,33 @@
   display: flex;
   width: 400px;
   height: 200px;
-  background-color: #000;
   align-items: center;
   justify-content: space-around;
   position: relative;
+}
+.card1 {
+  background-image: url("../../assets//images/card1Bg.jpeg");
+  background-size: cover;
+}
+.card2 {
+  background-image: url("../../assets//images/card2Bg.jpeg");
+  background-size: cover;
+}
+.card3 {
+  background-image: url("../../assets//images/card3Bg.jpeg");
+  background-size: cover;
+}
+.card4 {
+  background-image: url("../../assets//images/card4Bg.jpeg");
+  background-size: cover;
+}
+.card5 {
+  background-image: url("../../assets//images/card5Bg.jpeg");
+  background-size: cover;
+}
+.card6 {
+  background-image: url("../../assets//images/card6Bg.jpeg");
+  background-size: cover;
 }
 .card1:hover {
   background-color: #fff;
@@ -105,9 +128,9 @@
   font-weight: 700;
   padding: 1.5rem;
   border-radius: 0.5rem;
-  background-color: #000;
   transition: all 0.3s ease-in-out;
   color: #fff;
+  margin-left: 20px;
 }
 .about_body2 {
   max-width: 1220px;

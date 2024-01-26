@@ -38,9 +38,9 @@ const About = () => {
 
 
         <div className={styles.about_body}>
-          <div className={styles.card1}><Link to="/catalog" className={styles.cart_link}>Variety of categories </Link><BiCategory className={styles.card_icons} /></div>
-          <div className={styles.card3}><Link to="/cart" className={styles.cart_link}>Convenient shopping cart</Link><LuShoppingCart className={styles.card_icons} /></div>
-          <div className={styles.card2}><Link to="/contacts" className={styles.cart_link}>Brand-name products</Link><RiContactsBook2Line className={styles.card_icons} /> </div>
+          <div className={styles.card1}><Link to="/catalog" style={{ marginBottom: '20px' }} className={styles.cart_link}>Variety of categories </Link><BiCategory className={styles.card_icons} /></div>
+          <div className={styles.card2}><Link to="/contacts" style={{ marginBottom: '20px' }} className={styles.cart_link}>Brand-name products</Link><RiContactsBook2Line className={styles.card_icons} /> </div>
+          <div className={styles.card3}><Link to="/cart" style={{ marginBottom: '20px' }} className={styles.cart_link}>Convenient shopping cart</Link><LuShoppingCart className={styles.card_icons} /></div>
           <div className={styles.card4}><p className={styles.cart_link}>Quality guarantee</p><FaRegCircleCheck className={styles.card_icons} /></div>
           <div className={styles.card5}><p className={styles.cart_link}> Brand-name products</p><TbShoppingBagCheck className={styles.card_icons} /></div>
           <div className={styles.card6}><p className={styles.cart_link}>Promotions and discounts</p><MdOutlinePercent className={styles.card_icons} /></div>

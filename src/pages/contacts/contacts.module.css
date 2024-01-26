@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap");
+.contacts_main {
+  background-size: cover;
+  background: linear-gradient(to bottom left, black, rgb(70, 69, 69));
+}
+.contacts_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: auto;
+  margin-top: 30px;
+  height: auto;
+  background-color: #000;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-family: "Roboto", sans-serif;
+}
+.h1_text {
+  color: #fff;
+  font-size: 80px;
+  font-weight: 900;
+  font-family: "Rubik Burned", system-ui;
+  margin: 0 auto;
+}
+.h1_text:hover {
+  background: linear-gradient(to bottom left, rgb(43, 255, 0), rgb(0, 255, 242));
+  color: rgb(255, 0, 255);
+  transition: 3s;
+  border-radius: 30px;
+}
+.contacts_body {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: auto;
+  background-color: #000000;
+  text-transform: uppercase;
+  margin-top: 60px;
+}
+.text_block h3 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Rubik Burned", system-ui;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+.text_block p {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 900;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+span {
+  color: rgb(255, 0, 255);
+}
+.image_container {
+  width: 650px;
+  overflow: hidden;
+}
+.cover_image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+.contacts_body2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: auto;
+  background-color: #000000;
+  text-transform: uppercase;
+  margin-top: 60px;
+}
+.text_block_href {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  font-size: 25px;
+  gap: 60px;
+  align-items: center;
+}
+.text_block_href h3 {
+  color: #fff;
+  font-size: 40px;
+  font-family: "Rubik Burned", system-ui;
+}
+.text_block_href h3:hover {
+  background: linear-gradient(to bottom left, rgb(43, 255, 0), rgb(0, 255, 242));
+  color: rgb(255, 0, 255);
+  transition: 3s;
+  border-radius: 30px;
+  padding: 5px 5px 5px 5px;
+}
+.media {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  font-size: 25px;
+  gap: 60px;
+}
+.CMmedia {
+  font-size: 50px;
+  color: #fff;
+}
+.contacts_body3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  height: auto;
+  background-color: #000000;
+  text-transform: uppercase;
+  margin-top: 60px;
+  margin-bottom: 30px;
+}
+.form_container {
+  margin-left: 20px;
+}
+.form_container h3 {
+  color: #fff;
+  font-size: 40px;
+  font-weight: 900;
+  font-family: "Rubik Burned", system-ui;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+.form_container h3:hover {
+  background: linear-gradient(to bottom left, rgb(43, 255, 0), rgb(0, 255, 242));
+  color: rgb(255, 0, 255);
+  transition: 3s;
+  border-radius: 30px;
+  padding: 5px 5px 5px 5px;
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  font-size: 25px;
+  gap: 20px;
+}
