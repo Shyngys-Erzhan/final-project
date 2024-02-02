@@ -8,7 +8,6 @@ const FilterMenu = ({ onFilter, onClose }) => {
   const [maxPrice, setMaxPrice] = useState('');
 
   useEffect(() => {
-    // Загрузка данных из localStorage при монтировании компонента
     const savedMinPrice = localStorage.getItem('minPrice');
     const savedMaxPrice = localStorage.getItem('maxPrice');
 
@@ -23,14 +22,14 @@ const FilterMenu = ({ onFilter, onClose }) => {
 
   const handleFilterClick = () => {
     onFilter({ minPrice, maxPrice });
-    saveToLocalStorage(); // Сохранение данных в localStorage при применении фильтра
-    onClose(); // Закрыть модальное окно после применения фильтра
+    saveToLocalStorage();
+    onClose();
   };
 
   const handleClearClick = () => {
     setMinPrice('');
     setMaxPrice('');
-    clearLocalStorage(); // Очистка данных в localStorage при очистке фильтра
+    clearLocalStorage();
   };
 
   const saveToLocalStorage = () => {
